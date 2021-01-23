@@ -23,3 +23,11 @@ Route::prefix('customers')->group(function (){
     Route::get('/{id}',[CustomerController::class,'show']);
     Route::delete('/{id}',[CustomerController::class,'destroy']);
 });
+
+Route::prefix('rooms')->group(function (){
+    Route::get('/',[\App\Http\Controllers\RoomController::class,'index']);
+    Route::post('/',[\App\Http\Controllers\RoomController::class,'store']);
+    Route::put('/{id}',[\App\Http\Controllers\RoomController::class,'update']);
+    Route::get('/{id}',[\App\Http\Controllers\RoomController::class,'show']);
+    Route::delete('/id',[\App\Http\Controllers\RoomController::class,'destroy']);
+});
