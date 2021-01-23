@@ -14,6 +14,6 @@ class Room extends Model
     use HasFactory;
     public function customers()
     {
-        return $this->belongsTo(Customer::class,'id');
+        return $this->belongsTo(Customer::class);
     }
 }

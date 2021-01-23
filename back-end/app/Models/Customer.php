@@ -15,9 +15,4 @@ class Customer extends Model
         'email',
         'address'
     ];
-
-    public function rooms()
-    {
-        return $this->hasMany(Room::class,'id');
-    }
 }
