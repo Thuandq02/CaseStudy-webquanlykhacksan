@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class CustomerService {
-  protected baseUrl = "http://127.0.0.1:8000/api/customers";
+  protected baseUrl = "http://127.0.0.1:8001/api/customers";
   constructor(private http: HttpClient) { }
 
   getListCustomer(){
