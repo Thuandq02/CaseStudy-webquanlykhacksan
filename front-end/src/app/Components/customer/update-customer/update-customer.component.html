@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div id="page-wrapper">
+    <div class="main-page">
+      <div class="tables">
+        <h3 class="title1">Create Customer</h3>
+        <div class="panel-body widget-shadow">
+
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">name</label>
+              <input type="text" class="form-control" name="name" [(ngModel)]="customer.name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Age</label>
+              <input type="number" class="form-control" name="age" [(ngModel)]="customer.age">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Phone</label>
+              <input type="number" class="form-control" name="phone" [(ngModel)]="customer.phone">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email</label>
+              <input type="email" class="form-control" name="email" [(ngModel)]="customer.email">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Address</label>
+              <input type="text" class="form-control" name="address" [(ngModel)]="customer.address">
+            </div>
+            <button (click)="editCustomer()" class="btn btn-primary">Update</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
