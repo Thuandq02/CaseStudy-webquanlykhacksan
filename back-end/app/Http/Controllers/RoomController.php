@@ -90,5 +90,6 @@ class RoomController extends Controller
     {
         $room=Room::find($id);
         $room->delete();
+        return response()->json($room);
     }
 }
