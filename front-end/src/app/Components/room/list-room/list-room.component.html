@@ -10,14 +10,16 @@
             <tr>
               <th>ID</th>
               <th>Roomnumber</th>
-              <th>Status</th>
+              <th>price</th>
+              <th>image</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor = "let room of rooms">
               <td>{{room.id}}</td>
               <td>{{room.roomnumber}}</td>
-              <td>{{room.status}}</td>
+              <td>{{room.price}}</td>
+              <td>{{room.image}}</td>
               <td>
                 <a routerLink="edit/{{room.id}}" class="btn btn-primary">Edit</a>
                 <a (click)="deleteRoom(room.id)" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')" >Delete</a>

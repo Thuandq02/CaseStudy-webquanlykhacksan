@@ -10,6 +10,7 @@ import {Room} from "../room";
 })
 export class CreateRoomComponent implements OnInit {
 room!: any
+  customers: any;
   constructor(
     private roomService: RoomService,
     private router: Router
@@ -20,6 +21,7 @@ room!: any
   }
 
   addRoom(){
+  console.log(this.room)
   this.roomService.createRoom(this.room).subscribe(
     data=> {
       console.log(data);

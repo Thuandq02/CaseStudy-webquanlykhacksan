@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class ListRoomComponent implements OnInit {
 rooms: any;
+cutomers!: any;
   constructor(
     private roomService: RoomService,
     private router: Router

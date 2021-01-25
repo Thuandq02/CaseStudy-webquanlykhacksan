@@ -7,13 +7,25 @@
 
           <form>
             <div class="form-group">
-              <label for="exampleFormControlInput1">RoomNumber</label>
+              <label>RoomNumber</label>
               <input type="text" class="form-control" name="roomnumber" [(ngModel)]="room.roomnumber">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Status</label>
-              <input type="text" class="form-control" name="status" [(ngModel)]="room.status">
+              <label>Price</label>
+              <input type="text" class="form-control" name="price" [(ngModel)]="room.price">
             </div>
+            <div class="form-group">
+              <label>Image</label>
+              <input type="text" class="form-control" name="image" [(ngModel)]="room.image">
+            </div>
+            <div class="form-group">
+              <label>Id_customer</label>
+<!--              <select name="id_customer" *ngFor="let customer of customers">-->
+<!--                <option value="{{customer.id}}">{{customer.name}}</option>-->
+<!--              </select>-->
+              <input type="number" class="form-control" name="id_customer" [(ngModel)]="room.id_customer">
+            </div>
+
             <button (click)="addRoom()" class="btn btn-primary">Create</button>
           </form>
 

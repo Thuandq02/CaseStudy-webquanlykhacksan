@@ -11,9 +11,10 @@ class Customer extends Model
     protected $fillable = [
         'name',
         'age',
+        'gender',
         'phone',
         'email',
-        'address'
+        'address',
     ];
 
     public function rooms()
