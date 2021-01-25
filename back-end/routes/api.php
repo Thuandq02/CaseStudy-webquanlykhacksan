@@ -29,5 +29,5 @@ Route::prefix('rooms')->group(function (){
     Route::post('/',[\App\Http\Controllers\RoomController::class,'store']);
     Route::put('/{id}',[\App\Http\Controllers\RoomController::class,'update']);
     Route::get('/{id}',[\App\Http\Controllers\RoomController::class,'show']);
-    Route::delete('/id',[\App\Http\Controllers\RoomController::class,'destroy']);
+    Route::delete('/{id}',[\App\Http\Controllers\RoomController::class,'destroy']);
 });

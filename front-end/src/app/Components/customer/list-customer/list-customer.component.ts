@@ -38,5 +38,4 @@ export class ListCustomerComponent implements OnInit {
       },error => console.log(error)
     )
   }
-
 }

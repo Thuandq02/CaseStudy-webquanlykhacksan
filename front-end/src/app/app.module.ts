@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+// @ts-ignore
+import { NgModule } from "@angular/core";
+// @ts-ignore
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
@@ -10,13 +12,20 @@ import { ListCustomerComponent } from './Components/customer/list-customer/list-
 import { UpdateCustomerComponent } from './Components/customer/update-customer/update-customer.component';
 import { ToastrModule } from 'ngx-toastr';
 
+import { ListRoomComponent } from './Components/room/list-room/list-room.component';
+import { UpdateRoomComponent } from './Components/room/update-room/update-room.component';
+import { CreateRoomComponent } from "./Components/room/create-room/create-room.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateCustomerComponent,
     ListCustomerComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    CreateRoomComponent,
+    ListRoomComponent,
+    UpdateRoomComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@
                 <th>Email</th>
                 <th>Address</th>
                 <th>Action</th>
+
               </tr>
             </thead>
             <tbody>
@@ -27,6 +28,8 @@
                 <td>{{customer.phone}}</td>
                 <td>{{customer.email}}</td>
                 <td>{{customer.address}}</td>
+                <td></td>
+                <td></td>
                 <td>
                   <a routerLink="edit/{{customer.id}}" class="btn btn-primary">Edit</a>
                   <a (click)="deleteCustomer(customer.id)" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')" >Delete</a>

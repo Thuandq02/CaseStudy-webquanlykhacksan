@@ -20,6 +20,7 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   addCustomer(){
+    console.log(this.customer);
     this.customerService.createCustomer(this.customer).subscribe(
       data => {
         console.log(data);
