@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CustomerService} from "../customer.service";
 import {Router} from "@angular/router";
 import {Customer} from "../customer";
+import { RoomService } from '../../room/room.service';
 
 @Component({
   selector: 'app-create-customer',
@@ -10,13 +11,21 @@ import {Customer} from "../customer";
 })
 export class CreateCustomerComponent implements OnInit {
   customer!: any;
+  roomnumber: any;
   constructor(
+    private roomService: RoomService,
     private customerService: CustomerService,
     private router: Router,
     ) { }
 
   ngOnInit(): void {
     this.customer = new Customer();
+    this.roomService.getListRoom().subscribe(
+      data => {
+        this.roomnumber = data;
+      }
+    )
+
   }
 
   addCustomer(){
@@ -32,5 +41,6 @@ export class CreateCustomerComponent implements OnInit {
       }
     )
   }
+
 
 }
