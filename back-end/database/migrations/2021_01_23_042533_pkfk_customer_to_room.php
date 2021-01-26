@@ -13,8 +13,8 @@ class PkfkCustomerToRoom extends Migration
      */
     public function up()
     {
-        Schema::table('rooms', function (Blueprint $table) {
-            $table->foreign('id_customer')->references('id')->on('customers')->cascadeOnDelete()->cascadeOnUpdate();
+        Schema::table('customers', function (Blueprint $table) {
+            $table->foreign('roomnumber')->references('id')->on('rooms')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
