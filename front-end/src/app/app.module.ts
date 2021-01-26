@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ListRoomComponent } from './Components/room/list-room/list-room.component';
 import { UpdateRoomComponent } from './Components/room/update-room/update-room.component';
 import { CreateRoomComponent } from "./Components/room/create-room/create-room.component";
+import { DetailCustomerComponent } from './Components/customer/detail-customer/detail-customer.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CreateRoomComponent } from "./Components/room/create-room/create-room.c
     UpdateCustomerComponent,
     CreateRoomComponent,
     ListRoomComponent,
-    UpdateRoomComponent
+    UpdateRoomComponent,
+    DetailCustomerComponent
   ],
   imports: [
     BrowserModule,

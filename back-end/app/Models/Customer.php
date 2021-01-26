@@ -17,7 +17,7 @@ class Customer extends Model
         'roomnumber',
         'date_from',
         'date_to',
-        'no_of_people'
+        'no_of_people',
     ];
 
     public function rooms()
