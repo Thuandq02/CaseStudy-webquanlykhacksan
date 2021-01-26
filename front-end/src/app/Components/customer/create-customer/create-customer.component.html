@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div id="page-wrapper">
+    <div class="main-page">
+      <div class="tables">
+        <h3 class="title1">Create New Customer</h3>
+        <div class="panel-body widget-shadow">
+
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-11">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="customer.name">
+              </div>
+              <div class="form-group col-md-1">
+                <label>Gender</label><br>
+                <select name="gender" [(ngModel)]="customer.gender">
+                  <option>Nam</option>
+                  <option>Nữ</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Phone</label>
+                <input type="number" class="form-control" name="phone" [(ngModel)]="customer.phone">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="customer.email">
+              </div>
+              <div class="form-group col-md-12">
+                <label>Address</label>
+                <input type="text" class="form-control" name="address" [(ngModel)]="customer.address">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Room Number</label>
+                <input type="number" class="form-control" name="roomnumber" [(ngModel)]="customer.roomnumber">
+              </div>
+              <div class="form-group col-md-6">
+                <label>No. of People</label>
+                <input type="text" class="form-control" name="no_of_people" [(ngModel)]="customer.no_of_people">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Date From</label>
+                <input type="date" class="form-control" name="date_from" [(ngModel)]="customer.date_from">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Date To</label>
+                <input type="date" class="form-control" name="date_to" [(ngModel)]="customer.date_to">
+              </div>
+              <div class="form-group col-md-12">
+                <button (click)="addCustomer()" class="btn btn-primary">Create</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
