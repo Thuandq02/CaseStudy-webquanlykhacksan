@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('login', [UserController::class, 'login']);
 Route::post('register', [UserController::class, 'register']);
-Route::group(['middleware' => ['jwt']], function () {
+// Route::group(['middleware' => ['jwt']], function () {
     Route::get('user', [UserController::class, 'getAuthenticatedUser']);
     Route::prefix('customers')->group(function () {
         Route::get('/', [CustomerController::class, 'index']);
@@ -34,4 +34,4 @@ Route::group(['middleware' => ['jwt']], function () {
         Route::get('/{id}', [RoomController::class, 'show']);
         Route::delete('/{id}', [RoomController::class, 'destroy']);
     });
-});
+// });
