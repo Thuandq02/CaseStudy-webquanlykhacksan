@@ -17,8 +17,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor = "let room of rooms">
-              <td>{{room.id}}</td>
+            <tr *ngFor = "let room of rooms; let i = index">
+              <td>{{i + 1}}</td>
               <td>{{room.roomnumber}}</td>
               <td>{{room.price}}</td>
               <td>{{room.content}}</td>
