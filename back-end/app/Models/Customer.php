@@ -10,15 +10,18 @@ class Customer extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'age',
         'gender',
         'phone',
         'email',
         'address',
+        'roomnumber',
+        'date_from',
+        'date_to',
+        'no_of_people'
     ];
 
     public function rooms()
     {
-        return $this->hasMany(Room::class,'id');
+        return $this->hasMany(Room::class,'roomnumber');
     }
 }
