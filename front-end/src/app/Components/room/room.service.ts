@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class RoomService {
-protected baseUrl="http://127.0.0.1:8001/api/rooms"
+protected baseUrl="http://127.0.0.1:8000/api/rooms"
   constructor(private http: HttpClient) { }
 
   getListRoom(){
