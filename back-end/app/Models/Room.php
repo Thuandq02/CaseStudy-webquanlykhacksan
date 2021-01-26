@@ -10,8 +10,8 @@ class Room extends Model
     protected $fillable = [
         'roomnumber',
         'price',
+        'content',
         'image',
-        'id_customer',
     ];
     use HasFactory;
     public function customers()

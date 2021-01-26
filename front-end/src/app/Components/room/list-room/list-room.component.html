@@ -10,8 +10,9 @@
             <tr>
               <th>#</th>
               <th>Roomnumber</th>
-              <th>price</th>
-              <th>image</th>
+              <th>Price</th>
+              <th>Content</th>
+              <th>Image</th>
               <th>Action</th>
             </tr>
             </thead>
@@ -20,6 +21,7 @@
               <td>{{room.id}}</td>
               <td>{{room.roomnumber}}</td>
               <td>{{room.price}}</td>
+              <td>{{room.content}}</td>
               <td>{{room.image}}</td>
               <td>
                 <a routerLink="edit/{{room.id}}" class="btn btn-primary">Edit</a>
