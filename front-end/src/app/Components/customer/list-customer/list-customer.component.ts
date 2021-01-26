@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class ListCustomerComponent implements OnInit {
   customers: any;
+  number: number = 1;
 
   constructor(
     private customerService: CustomerService,
