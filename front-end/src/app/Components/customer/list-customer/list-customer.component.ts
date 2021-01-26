@@ -38,4 +38,7 @@ export class ListCustomerComponent implements OnInit {
       },error => console.log(error)
     )
   }
+  customerDetail(id: number) {
+    this.router.navigate(['details', id]);
+  }
 }

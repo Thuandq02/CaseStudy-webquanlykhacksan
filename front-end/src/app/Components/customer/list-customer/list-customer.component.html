@@ -10,29 +10,27 @@
               <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
                 <th>Phone</th>
-                <th>Email</th>
-                <th>Address</th>
+                <th>Room Number</th>
+                <th>Date From</th>
+                <th>Date To</th>
+                <th>No. of People</th>
                 <th>Action</th>
-
               </tr>
             </thead>
             <tbody>
               <tr *ngFor = "let customer of customers">
                 <td>{{customer.id}}</td>
                 <td>{{customer.name}}</td>
-                <td>{{customer.age}}</td>
-                <td>{{customer.gender}}</td>
                 <td>{{customer.phone}}</td>
-                <td>{{customer.email}}</td>
-                <td>{{customer.address}}</td>
-                <td></td>
-                <td></td>
+                <td>{{customer.roomnumber}}</td>
+                <td>{{customer.date_from}}</td>
+                <td>{{customer.date_to}}</td>
+                <td>{{customer.no_of_people}}</td>
                 <td>
                   <a routerLink="edit/{{customer.id}}" class="btn btn-primary">Edit</a>
                   <a (click)="deleteCustomer(customer.id)" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')" >Delete</a>
+                  <a (click)="customerDetail(customer.id)" class="btn btn-info">Details</a>
                 </td>
               </tr>
             </tbody>
