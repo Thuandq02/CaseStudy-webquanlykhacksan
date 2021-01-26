@@ -16,11 +16,14 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('age');
             $table->string('gender');
             $table->string('phone');
             $table->string('email');
             $table->string('address');
+            $table->unsignedBigInteger('roomnumber');
+            $table->string('date_from');
+            $table->string('date_to');
+            $table->string('no_of_people');
             $table->timestamps();
         });
     }
