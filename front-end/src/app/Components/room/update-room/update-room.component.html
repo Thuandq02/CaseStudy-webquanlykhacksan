@@ -18,10 +18,21 @@
               <label>Content</label>
               <input type="text" class="form-control" name="content" [(ngModel)]="room.content">
             </div>
-            <div class="form-group">
-              <label>Image</label>
-              <input type="text" class="form-control" name="status" [(ngModel)]="room.image">
+
+            <div class="form-group col-12">
+              <input type="file"
+                     id="file"
+                     #userPhoto
+                     (change)="onFileSelected($event)"
+                     name="image" [(ngModel)]="room.image"
+                     autocomplete="off"
+              />
             </div>
+
+<!--            <div class="form-group">-->
+<!--              <label>Image</label>-->
+<!--              <input type="text" class="form-control" name="status" [(ngModel)]="room.image">-->
+<!--            </div>-->
             <button (click)="editRoom()" class="btn btn-primary">Update</button>
           </form>
 

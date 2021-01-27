@@ -22,6 +22,8 @@ export class AppComponent {
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(`RoomsImages/${n}`, file);
     task
+
+
       .snapshotChanges()
       .pipe(
         finalize(() => {

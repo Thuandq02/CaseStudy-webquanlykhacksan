@@ -27,6 +27,7 @@ export class CreateRoomComponent implements OnInit {
   srcImg!: string;
   fb: string | undefined;
   downloadURL: Observable<string> | undefined;
+  uploadPercent: any;
 
   constructor(
     private roomService: RoomService,
