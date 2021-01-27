@@ -24,6 +24,7 @@ class CreateCustomersTable extends Migration
             $table->string('date_from');
             $table->string('date_to');
             $table->string('no_of_people');
+            $table->string('payment_in_advance');
             $table->timestamps();
         });
     }

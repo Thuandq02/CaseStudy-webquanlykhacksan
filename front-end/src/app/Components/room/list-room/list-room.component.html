@@ -13,6 +13,9 @@
               <th>Price</th>
               <th>Content</th>
               <th>Image</th>
+              <th>Floor</th>
+              <th>Type</th>
+              <th>Description</th>
               <th>Action</th>
             </tr>
             </thead>
@@ -25,6 +28,9 @@
               <td>
                 <img src="{{room.image}}" style="width: 100px">
               </td>
+              <td>{{room.floor}}</td>
+              <td>{{room.type}}</td>
+              <td>{{room.description}}</td>
               <td>
                 <a routerLink="edit/{{room.id}}" class="btn btn-primary">Edit</a>
                 <a (click)="deleteRoom(room.id)" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')" >Delete</a>

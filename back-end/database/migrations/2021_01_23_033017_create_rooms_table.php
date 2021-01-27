@@ -19,6 +19,9 @@ class CreateRoomsTable extends Migration
             $table->string('price');
             $table->string('content');
             $table->string('image');
+            $table->string('floor');
+            $table->string('type');
+            $table->string('description');
             $table->timestamps();
         });
     }

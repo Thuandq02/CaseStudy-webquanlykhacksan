@@ -9,4 +9,5 @@ export class Customer{
   date_from!: any;
   date_to!: any;
   no_of_people!: any;
+  payment_in_advance!: any;
 }
