@@ -13,9 +13,9 @@ export class LoginService {
     const reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    const data = {
-      email,
-      password
+    var data = {
+      'email': email,
+      'password': password
     };
     return this.http.post(`${this.baseUrl}`, data, { headers: reqHeader, responseType: 'json' });
   }
