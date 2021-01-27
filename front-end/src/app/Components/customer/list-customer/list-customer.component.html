@@ -15,6 +15,7 @@
                 <th>Date From</th>
                 <th>Date To</th>
                 <th>No. of People</th>
+                <th>Payment in advance</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -27,6 +28,7 @@
                 <td>{{customer.date_from}}</td>
                 <td>{{customer.date_to}}</td>
                 <td>{{customer.no_of_people}}</td>
+                <td>{{customer.payment_in_advance}}</td>
                 <td>
                   <a routerLink="edit/{{customer.id}}" class="btn btn-primary">Edit</a>
                   <a (click)="deleteCustomer(customer.id)" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')" >Delete</a>

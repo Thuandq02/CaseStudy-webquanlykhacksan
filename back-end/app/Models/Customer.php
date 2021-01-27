@@ -18,6 +18,8 @@ class Customer extends Model
         'date_from',
         'date_to',
         'no_of_people',
+        'payment_in_advance'
+
     ];
 
     public function rooms()

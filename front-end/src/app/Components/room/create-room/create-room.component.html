@@ -26,6 +26,20 @@
                      name="image" [(ngModel)]="room.image"
                      autocomplete="off">
             </div>
+            <div class="form-group">
+              <label>Floor</label>
+              <input type="text" class="form-control" name="floor" [(ngModel)]="room.floor">
+            </div>
+            <div class="form-group">
+              <label>Type</label>
+              <input type="text" class="form-control" name="type" [(ngModel)]="room.type">
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <input type="text" class="form-control" name="description" [(ngModel)]="room.description">
+            </div>
+
+
             <button (click)="addRoom()" class="btn btn-primary">Create</button>
           </form>
 

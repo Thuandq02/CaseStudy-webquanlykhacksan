@@ -12,6 +12,10 @@ class Room extends Model
         'price',
         'content',
         'image',
+        'floor',
+        'type',
+        'description'
+
     ];
     use HasFactory;
     public function customers()
