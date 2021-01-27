@@ -32,8 +32,8 @@
               </div>
               <div class="form-group col-md-6">
                 <label>Room Number</label><br>
-                <select name="roomnumber">
-                  <option *ngFor="let roomnumber of roomnumber">{{roomnumber.roomnumber}}</option>
+                <select class="form-control" name="roomnumber" [(ngModel)]="customer.roomnumber">
+                  <option *ngFor="let room of roomnumbers" value="{{room.id}}">{{room.roomnumber}}</option>
                 </select>
               </div>
               <div class="form-group col-md-6">
