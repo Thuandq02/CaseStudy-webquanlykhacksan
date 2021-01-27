@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
@@ -14,7 +15,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all();
+        $customers = DB::table('customers')->join('rooms','customers.roomnumber','=','rooms.id')->select('customers.*','rooms.roomnumber')->get();
         return response()->json($customers);
     }
 
@@ -50,6 +51,11 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
+//        $customer = DB::table('customers')
+//            ->join('rooms','customers.roomnumber','=','rooms.id')
+//            ->select('customers.*','rooms.roomnumber')
+//            -> where('customers.id','=',$id)
+//            ->get();
         $customer = Customer::find($id);
         return response()->json($customer);
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RoomService } from '../../room/room.service';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
@@ -9,11 +10,13 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./update-customer.component.css']
 })
 export class UpdateCustomerComponent implements OnInit {
-
+  roomnumbers!: any;
   customer!: any;
   id!: any;
 
-  constructor(private service: CustomerService,
+  constructor(
+    private roomService: RoomService,
+    private service: CustomerService,
     private router: Router,
     private route: ActivatedRoute,
     ) { }
@@ -27,6 +30,12 @@ export class UpdateCustomerComponent implements OnInit {
       data => {
         this.customer = data;
       },error => console.log(error)
+
+    )
+    this.roomService.getListRoom().subscribe(
+      data => {
+        this.roomnumbers = data;
+      }
     )
   }
 
