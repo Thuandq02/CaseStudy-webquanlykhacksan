@@ -16,6 +16,9 @@ import { ListRoomComponent } from './Components/room/list-room/list-room.compone
 import { UpdateRoomComponent } from './Components/room/update-room/update-room.component';
 import { CreateRoomComponent } from "./Components/room/create-room/create-room.component";
 import { DetailCustomerComponent } from './Components/customer/detail-customer/detail-customer.component';
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
+import {AngularFireStorageModule} from "@angular/fire/storage";
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { DetailCustomerComponent } from './Components/customer/detail-customer/d
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ToastrModule
+    ToastrModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [],
   bootstrap: [AppComponent]
