@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Room} from "../room";
 import {RoomService} from "../room.service";
+import {Observable} from "rxjs";
+import {ImageService} from "../image.service";
+import {AngularFireStorage} from "@angular/fire/storage";
+import {finalize} from "rxjs/operators"; //
 
 @Component({
   selector: 'app-update-room',
@@ -11,9 +15,17 @@ import {RoomService} from "../room.service";
 export class UpdateRoomComponent implements OnInit {
 room!: any;
 id!: any;
+
+  selectedFile: null = null; //
+  srcImg!: string; //
+  fb: string | undefined;  //
+  downloadURL: Observable<string> | undefined; //
+
   constructor(private service:RoomService,
               private router:Router,
-              private route:ActivatedRoute
+              private route:ActivatedRoute,
+              private imageService: ImageService,//
+              private storage: AngularFireStorage
               ) { }
 
   ngOnInit(): void {
@@ -36,4 +48,32 @@ id!: any;
       },error => console.log(error)
     )
   }
+
+  onFileSelected(event: any) { //
+    var n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.fb = url;
+            }
+            this.srcImg = url;
+            console.log(this.fb);
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+
+          // console.log(url);
+        }
+      });
+  } //
 }
