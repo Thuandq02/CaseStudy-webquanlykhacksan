@@ -21,15 +21,7 @@ export class CustomerService {
   }
 
   createCustomer(value: any){
-    var auth_token = localStorage.getItem('AccessToken');
-    var reqHeader = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin' :'*',
-      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
-      // cu phap co dau cach dang sau Bearer
-      'Authorization': 'Bearer ' + auth_token
-    });
-    return this.http.post(`${this.baseUrl}`,value, {headers:reqHeader });
+    return this.http.post(`${this.baseUrl}`,value);
   }
 
   updateCustomer(id: number,value: any){
