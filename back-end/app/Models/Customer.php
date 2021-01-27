@@ -22,6 +22,6 @@ class Customer extends Model
 
     public function rooms()
     {
-        return $this->hasMany(Room::class,'roomnumber');
+        return $this->hasMany(Room::class,'id');
     }
 }

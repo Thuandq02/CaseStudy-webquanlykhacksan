@@ -11,7 +11,7 @@ import { RoomService } from '../../room/room.service';
 })
 export class CreateCustomerComponent implements OnInit {
   customer!: any;
-  roomnumber: any;
+  roomnumbers!: any;
   constructor(
     private roomService: RoomService,
     private customerService: CustomerService,
@@ -22,7 +22,8 @@ export class CreateCustomerComponent implements OnInit {
     this.customer = new Customer();
     this.roomService.getListRoom().subscribe(
       data => {
-        this.roomnumber = data;
+        this.roomnumbers = data;
+        console.log(data)
       }
     )
 
