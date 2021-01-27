@@ -17,6 +17,7 @@ import { DetailCustomerComponent } from './Components/customer/detail-customer/d
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {AngularFireStorageModule} from "@angular/fire/storage";
+import { LoginComponent } from './Components/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {AngularFireStorageModule} from "@angular/fire/storage";
     CreateRoomComponent,
     ListRoomComponent,
     UpdateRoomComponent,
-    DetailCustomerComponent
+    DetailCustomerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
