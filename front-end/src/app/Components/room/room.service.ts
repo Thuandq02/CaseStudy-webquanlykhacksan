@@ -33,14 +33,38 @@ protected baseUrl="http://127.0.0.1:8000/api/rooms"
   }
 
   updateRoom(id:number,value:any){
-  return this.http.put(`${this.baseUrl}/${id}`,value);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+  return this.http.put(`${this.baseUrl}/${id}`,value, {headers:reqHeader });
   }
 
   getRoom(id:number){
-  return this.http.get(`${this.baseUrl}/${id}`);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+  return this.http.get(`${this.baseUrl}/${id}`, {headers:reqHeader });
   }
 
   deleteRoom(id:number){
-  return this.http.delete(`${this.baseUrl}/${id}`);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+  return this.http.delete(`${this.baseUrl}/${id}`,{headers:reqHeader });
   }
 }
