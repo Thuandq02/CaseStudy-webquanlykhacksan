@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,27 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getListCustomer(){
-    return this.http.get(`${this.baseUrl}`);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`${this.baseUrl}`, {headers:reqHeader });
   }
 
   createCustomer(value: any){
-    return this.http.post(`${this.baseUrl}`,value);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.post(`${this.baseUrl}`,value, {headers:reqHeader });
   }
 
   updateCustomer(id: number,value: any){
