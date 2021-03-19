@@ -1,0 +1,51 @@
+<div class="main-content">
+  <div id="page-wrapper">
+    <div class="main-page">
+      <div class="tables">
+        <h3 class="title1">Customer Details Name: {{customer.name}}</h3>
+        <div>
+
+          <hr/>
+          <div *ngIf="customer">
+            <div>
+              <label><b>Name: </b></label> {{customer.name}}
+            </div><br>
+            <div>
+              <label><b>Gender: </b></label> {{customer.gender}}
+            </div><br>
+            <div>
+              <label><b>Phone: </b></label> {{customer.phone}}
+            </div><br>
+            <div>
+              <label><b>Email: </b></label> {{customer.email}}
+            </div><br>
+            <div>
+              <label><b>Address: </b></label> {{customer.address}}
+            </div><br>
+            <div>
+              <label><b>Room Number: </b></label> {{room.roomnumber}}
+            </div><br>
+            <div>
+              <label><b>Date From: </b></label> {{customer.date_from}}
+            </div><br>
+            <div>
+              <label><b>Date To: </b></label> {{customer.date_to}}
+            </div><br>
+            <div>
+              <label><b>No. of People: </b></label> {{customer.no_of_people}}
+            </div><br>
+            <div>
+              <label><b>Payment in advance: </b></label> {{customer.payment_in_advance}}
+            </div><br>
+          </div>
+          <br>
+          <button (click)="list()" class="btn btn-primary">Back to Customer List</button><br>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Employee Details</h2>
+

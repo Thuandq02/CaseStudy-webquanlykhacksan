@@ -1,0 +1,44 @@
+<div class="main-content">
+  <div id="page-wrapper">
+    <div class="main-page">
+      <div class="tables">
+        <h3 class="title1">List Customer</h3>
+        <div class="panel-body widget-shadow">
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Room Number</th>
+                <th>Date From</th>
+                <th>Date To</th>
+                <th>No. of People</th>
+                <th>Payment in advance</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let customer of customers; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.phone}}</td>
+                <td>{{customer.roomnumber}}</td>
+                <td>{{customer.date_from}}</td>
+                <td>{{customer.date_to}}</td>
+                <td>{{customer.no_of_people}}</td>
+                <td>{{customer.payment_in_advance}}</td>
+                <td>
+                  <a routerLink="edit/{{customer.id}}" class="btn btn-primary">Edit</a>
+                  <a (click)="deleteCustomer(customer.id)" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ?')" >Delete</a>
+                  <a (click)="customerDetail(customer.id)" class="btn btn-info">Details</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
